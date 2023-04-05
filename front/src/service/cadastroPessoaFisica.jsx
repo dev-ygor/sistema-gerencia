@@ -2,8 +2,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import cadastroPessoaJuridica from "./cadastroPessoaJuridica";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 
 function App() {
@@ -22,21 +20,6 @@ function App() {
   const handleChange = (event) => {
     setFornecedorPf({...fornecedorPf, [event.target.name]:event.target.value})
   }
-
-  // const rotas = () => {
-  //   return (
-  //     <BrowserRouter>
-  //       <Route path="/cadastroPessoaJuridica" component={cadastroPessoaJuridica} />
-  //     </BrowserRouter>
-  //   );
-  // }
-  const navigate = useNavigate();
-
-  const handleOnClickPJ = () => {
-    navigate("/cadastroPessoaJuridica");
-  }
-
-  
 
   const handleOnSubmitCep = (event) => {
     event.preventDefault();
@@ -97,7 +80,7 @@ function App() {
     <form onSubmit={handleOnSubmit}>
         <h1>Cadastro de Fornecedor</h1> <br />
           <div class="form-check">
-            <input onClick={handleOnClickPJ} class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked/>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked/>
             <label class="form-check-label" for="flexRadioDefault1">
               Pessoa Física
             </label>
